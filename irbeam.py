@@ -18,7 +18,7 @@ def checkMail():
     for index, sensor in enumerate(IR_SENSORS):
         val = GPIO.input(sensor)
         print("[*] {}: prev_val: {} value: {}".format(IR_SENSORS[index], prev_val[index], val))
-        if val != prev_val[index] and val == 1:
+        if val != prev_val[index] and val == 0:
             prev_val[index] = val
             callChris()
         prev_val[index] = val
